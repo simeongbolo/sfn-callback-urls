@@ -84,7 +84,7 @@ def encode_payload(payload, master_key_provider):
         return '1-' + str(base64.urlsafe_b64encode(payload_string), 'ascii')
     else:
         try:
-            ciphertext, encryptor_header = aws_encryption_sdk.encrypt(
+            ciphertext, encryptor_header = aws_encryption_sdk.EncryptionSDKClient().encrypt(
                 source=payload_string,
                 key_provider=master_key_provider
             )
@@ -140,7 +140,7 @@ def decode_payload(payload, master_key_provider):
         if not master_key_provider:
             raise DecryptionUnsupported('No key found')
         try:
-            decrypted_payload, decrypted_header = aws_encryption_sdk.decrypt(
+            decrypted_payload, decrypted_header = aws_encryption_sdk.EncryptionSDKClient().decrypt(
                 source=binary_payload,
                 key_provider=master_key_provider
             )
