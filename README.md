@@ -41,7 +41,7 @@ EMAIL=TODO_YOUR_EMAIL
 FUNC=$(aws cloudformation describe-stacks --stack-name $STACK_NAME --query "Stacks[0].Outputs[?OutputKey=='Function'].OutputValue" --output text)
 
 # Deploy the example stack
-aws cloudformation deploy --template-file example/template.yaml --stack-name SfnCallbackUrlsExample --parameter-overrides Email=$EMAIL CreateUrlsFunction=$FUNC --capabilities CAPABILITY_IAM
+aws cloudformation deploy --template-file example/template.yml --stack-name SfnCallbackUrlsExample --parameter-overrides Email=$EMAIL CreateUrlsFunction=$FUNC --capabilities CAPABILITY_IAM
 
 # Go to your email and confirm the SNS subscription
 

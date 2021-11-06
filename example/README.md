@@ -14,7 +14,7 @@ EXAMPLE_STACK_NAME=SfnCallbackUrlsExample # the name you want the example stack 
 
 FUNC=$(aws cloudformation describe-stacks --stack-name $STACK_NAME --query "Stacks[0].Outputs[?OutputKey=='Function'].OutputValue" --output text)
 
-aws cloudformation deploy --template-file template.yaml --stack-name $EXAMPLE_STACK_NAME --parameter-overrides Email=$EMAIL CreateUrlsFunction=$FUNC --capabilities CAPABILITY_IAM
+aws cloudformation deploy --template-file template.yml --stack-name $EXAMPLE_STACK_NAME --parameter-overrides Email=$EMAIL CreateUrlsFunction=$FUNC --capabilities CAPABILITY_IAM
 
 # Go to your email and confirm the SNS subscription
 
