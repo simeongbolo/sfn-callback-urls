@@ -197,8 +197,8 @@ Resources:
                   - s3:GetObjectVersion
                 Effect: Allow
                 Resource:
-                  - !Sub 'arn:${AWS::Partition}:s3:::${S3Bucket}'
-                  - !Sub 'arn:${AWS::Partition}:s3:::${S3Bucket}/*'
+                  - !Sub 'arn:${AWS::Partition}:s3:::create-callbacurl-pipe-187675645'
+                  - !Sub 'arn:${AWS::Partition}:s3:::create-callbacurl-pipe-187675645/*'
               - Action:
                   - apigateway:DELETE
                   - apigateway:GET
@@ -415,8 +415,8 @@ Resources:
                   - s3:GetObjectVersion
                 Effect: Allow
                 Resource:
-                  - !Sub 'arn:${AWS::Partition}:s3:::${S3Bucket}'
-                  - !Sub 'arn:${AWS::Partition}:s3:::${S3Bucket}/*'
+                  - !Sub 'arn:${AWS::Partition}:s3:::create-callbacurl-pipe-187675645'
+                  - !Sub 'arn:${AWS::Partition}:s3:::create-callbacurl-pipe-187675645/*'
               - Action:
                   - apigateway:DELETE
                   - apigateway:GET
