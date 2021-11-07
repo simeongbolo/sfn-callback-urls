@@ -189,6 +189,7 @@ Resources:
         }
       Path: /
       Policies:
+        - PolicyName: ProcessCallbackRole
         - PolicyDocument:
             Statement:
               - Action:
@@ -196,9 +197,7 @@ Resources:
                   - s3:GetObject
                   - s3:GetObjectVersion
                 Effect: Allow
-                Resource:
-                  - !Sub 'arn:${AWS::Partition}:s3:::create-callbacurl-pipe-187675645'
-                  - !Sub 'arn:${AWS::Partition}:s3:::create-callbacurl-pipe-187675645/*'
+                Resource: "*"
               - Action:
                   - apigateway:DELETE
                   - apigateway:GET
@@ -407,6 +406,7 @@ Resources:
         }
       Path: /
       Policies:
+        - PolicyName: ProcessCallbackRole
         - PolicyDocument:
             Statement:
               - Action:
@@ -414,9 +414,7 @@ Resources:
                   - s3:GetObject
                   - s3:GetObjectVersion
                 Effect: Allow
-                Resource:
-                  - !Sub 'arn:${AWS::Partition}:s3:::create-callbacurl-pipe-187675645'
-                  - !Sub 'arn:${AWS::Partition}:s3:::create-callbacurl-pipe-187675645/*'
+                Resource: "*"
               - Action:
                   - apigateway:DELETE
                   - apigateway:GET
