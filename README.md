@@ -27,9 +27,10 @@ STACK_NAME=TODO_DEPLOYED_APP_STACK_NAME
 
 # *** Do this part if you are deploying from source ***
 
-STACK_NAME=SfnCallbackUrls
+# Set this value
+CODE_BUCKET=TODO_YOUR_S3_BUCKET
 
-sam build --use-container && sam deploy --guided --stack-name $STACK_NAME
+sam build --use-container && sam package --output-template-file packaged-template.yaml --s3-bucket $CODE_BUCKET && sam deploy --template-file packaged-template.yaml --capabilities CAPABILITY_IAM --stack-name $STACK_NAME
 
 # *** Now, let's get to it ***
 
